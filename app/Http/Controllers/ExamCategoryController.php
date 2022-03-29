@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreExamCategoryRequest;
 use App\Http\Requests\UpdateExamCategoryRequest;
 use App\Models\ExamCategory;
+use Illuminate\Http\Request;
 
 class ExamCategoryController extends Controller
 {
@@ -35,9 +36,9 @@ class ExamCategoryController extends Controller
      * @param  \App\Http\Requests\StoreExamCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreExamCategoryRequest $request)
+    public function store(Request $request)
     {
-        //
+        // dd($request->all());
     }
 
     /**

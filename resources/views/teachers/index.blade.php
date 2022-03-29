@@ -1,8 +1,8 @@
 @extends('layouts.app')
 <x-datatables />
 @section('content')
+    <a class="btn btn-primary mb-2" href="{{ route('grades.choose') }}">Kelola kelas</a>
     <div class="row">
-        <a class="btn btn-primary" href="{{ route('grades.choose') }}">Pilih kelas</a>
         <div class="col-12">
             <div class="card p-3">
                 <table class="table" id="datatable">

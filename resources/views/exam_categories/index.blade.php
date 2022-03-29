@@ -1,6 +1,7 @@
 @extends('layouts.app')
 <x-datatables />
 @section('content')
+    <livewire:create-exam-category />
     <div class="row">
         <div class="col-12">
             <div class="card p-3">
@@ -27,6 +28,5 @@
                 </table>
             </div>
         </div>
-
     </div>
 @endsection
