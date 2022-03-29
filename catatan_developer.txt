@@ -1,0 +1,28 @@
+#alur
+1. Institution mendaftar
+2. User Mendaftar sebagai ?
+    admin
+    teacher
+3. Jika mendaftar sbg admin, dia dapat
+    mengelola grade
+    mengelola teacher
+    mengelola siswa
+    mengelola kategori
+4. Jika dia mendaftar sebagai teacher, dia dapat
+    mengelola siswa
+    mengelola exam kategori
+    menguji siswa
+
+
+#pribadi
+
+---------------------
+jika seperti ini
+---------------------
+$table->integer('teacher_id')->unsigned();  
+$table->foreign('teacher_id')->references('id')->on('teachers')
+->onDelete('cascade');
+---------------------
+maka, relasinya seperti ini
+---------------------
+$table->increment('id');
