@@ -30,23 +30,11 @@ class ExamCategoryController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreExamCategoryRequest  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // dd($request->all());
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ExamCategory  $examCategory
-     * @return \Illuminate\Http\Response
-     */
     public function show(ExamCategory $examCategory)
     {
         //

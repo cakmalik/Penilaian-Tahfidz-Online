@@ -1,8 +1,7 @@
 <div>
-    <li class="sidebar-item {{ $active }}">
-        <a class="sidebar-link" href="{{ $href }}">
-            <i class="align-middle" data-feather="{{ $icon }}"></i> <span
-                class="align-middle text-capitalize">{{ $text }}</span>
-        </a>
+    <li class="nav-item  {{ $active }}">
+        <a class="nav-link" href="{{ $href }}">
+            <i class="fas fa-fw fa-{{ $icon }}"></i>
+            <span class="text-capitalize">{{ $text }}</span></a>
     </li>
 </div>

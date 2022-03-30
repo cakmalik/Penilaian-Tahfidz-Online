@@ -1,8 +1,13 @@
 @extends('layouts.app')
 <x-datatables />
 @section('content')
-    <livewire:create-exam-category />
-    <div class="row">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Add
+    </button>
+    <x-modal title="Add Exam Category">
+        <livewire:create-exam-category />
+    </x-modal>
+    <div class="row mt-2">
         <div class="col-12">
             <div class="card p-3">
                 <table class="table" id="datatable">
