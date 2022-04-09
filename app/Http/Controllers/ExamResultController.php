@@ -24,10 +24,10 @@ class ExamResultController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+public function testStudent()
+{
+    return view('exam_results.testStudent');
+}
 
     /**
      * Store a newly created resource in storage.

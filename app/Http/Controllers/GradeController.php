@@ -97,4 +97,11 @@ class GradeController extends Controller
         $guru->grades()->sync($gradeIds);
         return redirect()->route('teachers.index');
     }
+    public function getGradeWhereInstitution()
+    {
+        $inst = Auth::user()->institution_id;
+        $collection = Grade::where('institution_id',$inst)->get();
+        return $collection;
+    }
+
 }

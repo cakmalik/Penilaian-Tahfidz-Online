@@ -8,13 +8,16 @@ use App\Imports\StudentImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
+use App\Models\Grade;
 
 class StudentController extends Controller
 {
     public function index()
     {
         $collection = Student::orderBy('grade_id', 'ASC')->get();
-        return view('students.index', compact('collection'));
+        $grade = new GradeController();
+        $grades_id= $grade->getGradeWhereInstitution();
+        return view('students.index', compact('collection','grades_id'));
     }
 
     public function store(StoreStudentRequest $request)
@@ -33,35 +36,18 @@ class StudentController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Student  $student
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Student $student)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateStudentRequest  $request
-     * @param  \App\Models\Student  $student
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(UpdateStudentRequest $request, Student $student)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Student  $student
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Student $student)
     {
         //

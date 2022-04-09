@@ -6,6 +6,7 @@ use App\Models\Grade;
 use App\Models\Student;
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\GradeController;
 
 class CreateExamCategory extends Component
 {
@@ -19,13 +20,14 @@ class CreateExamCategory extends Component
 
     public function mount()
     {
-        $this->grades = Grade::all();
+        $grade = new GradeController();
+        $grades = $grade->getGradeWhereInstitution();
+        $this->grades = $grades;
     }
 
     public function render()
     {
-        $grades = Grade::all();
-        return view('livewire.create-exam-category', compact('grades'));
+        return view('livewire.create-exam-category');
     }
 
     public function updatedSelectedJuz()

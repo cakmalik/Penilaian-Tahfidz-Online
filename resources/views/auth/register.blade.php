@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+@push('foot')
+    <script src="{{ asset('js/select2.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $("#ins").select2({
+                placeholder: "Please Select"
+            });
+        });
+    </script>
+@endpush
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -16,10 +27,14 @@
                                     class="col-md-4 col-form-label text-md-end">{{ __('institution_id') }}</label>
 
                                 <div class="col-md-6">
-                                    <select name="institution_id" id="institution_id" class="form-select">
-                                        <option value="1">SDIT Harapan Umat</option>
+                                    @php
+                                        $ins = DB::table('institutions')->get();
+                                    @endphp
+                                    <select name="institution_id" id="ins" class="form-control">
+                                        @foreach ($ins as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
                                     </select>
-
                                     @error('institution_id')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->integer('institution_id')->nullable();
             $table->string('name');
+            $table->string('phone')->nullable();
             $table->timestamps();
         });
     }

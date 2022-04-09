@@ -6,7 +6,7 @@
             @method('POST')
             <div class="form-group">
                 <label for="nama_guru" class="mb-2">Teacher Name</label>
-                <select name="teacher_id" id="nama_guru" class="form-select">
+                <select name="teacher_id" id="teacher" class="form-control">
                     @foreach ($teachers as $teacher)
                         <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
                     @endforeach
@@ -15,15 +15,10 @@
 
             <div class="form-group mt-3">
                 <label class="mb-2">Grade/Kelas yang diampu</label>
-                @foreach ($collection as $grade)
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="grade_id[]"
-                            value="{{ $grade->id }}">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            {{ $grade->name }}
-                        </label>
-                    </div>
-                @endforeach
+                <select class="form-control" id="grade" name="grade_id[]" multiple="multiple">
+                    @foreach ($collection as $grade)
+                        <option value="{{ $grade->id }}">{{ $grade->name }}</option>
+                    @endforeach
                 </select>
             </div>
 

@@ -19,9 +19,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('desc')->nullable();
             $table->integer('juz');
-            $table->integer('ayah');
-            $table->integer('start_surah');
-            $table->integer('end_surah');
+            $table->integer('surah');
+            $table->string('surah_name');
+            $table->integer('start_ayah');
+            $table->integer('end_ayah');
             $table->timestamps();
         });
     }

@@ -12,20 +12,18 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Tables -->
-    <x-menu :href="route('home')" :icon="'home'" :text="'Dashboard'"
-        :active="Request::segment(1) == 'home' ? 'active' : ''" />
-    <x-menu :href="route('institutions.index')" :icon="'building'" :text="'institutions'"
-        :active="Request::segment(1) == 'institutions' ? 'active' : ''" />
-    <x-menu :href="route('students.index')" :icon="'users'" :text="'Students'"
-        :active="Request::segment(1) == 'students' ? 'active' : ''" />
-    <x-menu :href="route('teachers.index')" :icon="'user'" :text="'teachers'"
-        :active="Request::segment(1) == 'teachers' ? 'user' : ''" />
-    <x-menu :href="route('category.index')" :icon="'list'" :text="'category'"
-        :active="Request::segment(1) == 'category' ? 'active' : ''" />
-    <x-menu :href="route('grades.index')" :icon="'list'" :text="'grades'"
-        :active="Request::segment(1) == 'grades' ? 'active' : ''" />
-    <x-menu :href="route('result.index')" :icon="'list'" :text="'result'"
-        :active="Request::segment(1) == 'result' ? 'active' : ''" />
+    <x-menu :href="route('home')" :icon="'home'" :text="'Dashboard'" :active="Request::segment(1) == 'home' ? 'active' : ''" />
+    @hasrole('super-admin')
+        <x-menu :href="route('institutions.index')" :icon="'building'" :text="'institutions'" :active="Request::segment(1) == 'institutions' ? 'active' : ''" />
+    @endhasrole
+    @hasrole('admin')
+        <x-menu :href="route('students.index')" :icon="'users'" :text="'Students'" :active="Request::segment(1) == 'students' ? 'active' : ''" />
+    @endhasrole
+    <x-menu :href="route('teachers.index')" :icon="'user'" :text="'teachers'" :active="Request::segment(1) == 'teachers' ? 'user' : ''" />
+    <x-menu :href="route('grades.index')" :icon="'list'" :text="'grades'" :active="Request::segment(1) == 'grades' ? 'active' : ''" />
+    <x-menu :href="route('category.index')" :icon="'list'" :text="'category'" :active="Request::segment(1) == 'category' ? 'active' : ''" />
+    <x-menu :href="route('test.student')" :icon="'list'" :text="'student test'" :active="Request::segment(1) == 'test' ? 'active' : ''" />
+    <x-menu :href="route('result.index')" :icon="'list'" :text="'result'" :active="Request::segment(1) == 'result' ? 'active' : ''" />
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

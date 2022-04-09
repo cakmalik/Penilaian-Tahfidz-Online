@@ -24,7 +24,9 @@ class StoreExamCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:exam_categories,name',
+            'name' => 'required',
+            'grade_id' => 'required',
+            'end_ayah' => 'required',
         ];
     }
 }

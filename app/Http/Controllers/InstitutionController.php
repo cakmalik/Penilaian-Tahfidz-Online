@@ -8,11 +8,7 @@ use App\Models\Institution;
 
 class InstitutionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         $collection = Institution::all();
